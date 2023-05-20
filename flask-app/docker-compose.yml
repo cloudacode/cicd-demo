@@ -3,13 +3,13 @@ services:
   todo-mariadb-app:
     image: cloudacode/mariadb-todo:v1.0.1
     ports:
-      - "3306:3306" 
+      - "3306:3306"
   todo-flask-app:
-    links: 
+    links:
       - todo-mariadb-app
-    image: cloudacode/python-todo:v1.1.0
+    image: cloudacode/todo-app
     ports:
-      - "5000:5000"
+      - "8888:8888"
     environment:
       - DB_USER=root
       - DB_PASSWORD=mysecret
