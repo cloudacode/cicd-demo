@@ -7,6 +7,7 @@ phases:
       - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PW
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - cd flask-app/
   build:
     commands:
       - echo Build started on `date`
